@@ -6,7 +6,7 @@ const genplanItems = () => {
   if (parentEl) {
     const maskItems = parentEl.querySelectorAll('.genplan__item');
     maskItems.forEach((item, index) => {
-      item.setAttribute('data-status', '');
+      // item.setAttribute('data-status', '');
       item.setAttribute('tabindex', '1');
       item.setAttribute('data-id', (index + 1));
       // item.setAttribute('data-open-modal', 'genplan');
