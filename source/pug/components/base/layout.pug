@@ -1,0 +1,41 @@
+doctype html
+
+include ../components
+
+block variables
+
+html(lang="ru")
+  head
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    meta(name="description" content="ProjectName — описание")
+    //- генерируйте favicon тут - https://realfavicongenerator.net/
+    //- в подключение фавикон манифеста обязательно добавьте строчки crossorigin="use-credentials"
+
+    //- используйте только для шрифта находящегося на первом экране
+    //- link(rel="preload" href="fonts/placeholder.woff2" as="font" crossorigin="anonymous")
+    //- Add the slick-theme.css if you want default styling
+    //- ToDo Remove this CDN on product
+    link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+    //- Add the slick-theme.css if you want default styling
+    link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css')
+    link(rel="stylesheet" href="css/style.min.css")
+
+  body
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    block modals
+  //- script(src='https://code.jquery.com/jquery-3.6.0.slim.min.js' integrity='sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=' crossorigin='anonymous')
+  //- script(type='text/javascript' src='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+  script(src="js/vendor.min.js")
+  script(src="js/main.min.js")

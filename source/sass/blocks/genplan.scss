@@ -1,0 +1,73 @@
+.genplan {
+	&__pic {
+		width: 100%;
+		position: relative;
+		img {
+			border: 1px solid #dddddd;
+			padding: 5px;
+			border-radius: 4px;
+			position: relative;
+			z-index: 10;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 12px;
+			vertical-align: middle;
+		}
+	}
+	&__mask {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 11;
+		svg {
+			width: 100%;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 12px;
+			padding: 5px;
+		}
+	}
+	&__item {
+		cursor: pointer;
+		&-mask {
+			color: $color-oyster-bay;
+			transition: color $trans-default;
+		}
+		&[data-status="free"] & {
+			&-mask {
+				color: $color-yellow-green;
+			}
+		}
+		&[data-status="reserved"] & {
+			&-mask {
+				color: $color-corn;
+			}
+		}
+		&[data-status="sold"] & {
+			&-mask {
+				color: $color-persian-red;
+			}
+		}
+		&-number {
+			pointer-events: none;
+		}
+		&:focus {
+			outline: none;
+		}
+		&:focus & {
+			&-mask {
+				stroke: $color-default-black;
+			}
+		}
+		&:hover &,
+		&:focus-visible & {
+			&-mask {
+				color: $color-electric-blue;
+			}
+		}
+	}
+}

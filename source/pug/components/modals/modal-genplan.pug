@@ -1,0 +1,35 @@
+mixin modal-genplan()
+
+	-
+		const data = {
+			title: "Участок №33",
+			queue: "1 очередь",
+			status: "Свободен",
+			area: "12,05 сот.",
+			src: "https://picsum.photos/200/104",
+			btnMore: {
+				href: "/uchastok-n",
+				text: "Подробнее",
+			},
+			btnBook: {
+				
+				text: "Забронировать",
+			},
+		}
+
+	.modal--genplan__wrapper
+		.modal--genplan__slider
+			-for(let i = 0; i < 6; i++)
+				.modal--genplan__slider-item
+					+img("slides", "modal-genplan-img", "jpg", "100%", "100%", "Фотография участка")
+		.modal--genplan__rows
+			.modal--genplan__row 
+				h2.modal--genplan__title=data.title
+				span.modal--genplan__queue=data.queue
+			.modal--genplan__row 
+				span.modal--genplan__status=data.status
+				span.modal--genplan__area=data.area
+			.modal--genplan__row
+				+btn(data.btnMore).modal--genplan__btn.modal--genplan__btn--transparent(data-more-btn)
+				+btn(data.btnBook).modal--genplan__btn.modal--genplan__btn--filled(data-book-btn)
+
