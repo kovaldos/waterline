@@ -5,7 +5,7 @@ window.$ = $;
 import slick from 'slick-carousel';
 export function initModalSlider() {
   $('.modal--genplan__slider').slick({
-	infinite: false,
+    infinite: false,
   });
 }
 

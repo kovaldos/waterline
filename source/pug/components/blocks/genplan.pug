@@ -11,7 +11,6 @@ mixin genplan ()
 					h1.text-center.section-title.nekoAnim-invisible.nekoAnim-animated.nekoAnim-fadeInUp.nekoAnim-visible(data-nekoanim='fadeInUp' data-nekodelay='50' style='animation-delay: 50ms;')=data.title
 				.col-xs-12.clearfix.about-main
 					.genplan__pic
-						//- img.img-responsive.wp-image-1086.aligncenter(loading='lazy' src='https://waterlinespb.ru/wp-content/uploads/2022/03/Water1020.jpg' alt='' width='1020' height='699')
 						+img("content", "genplan-img", "png", 1020, 699, "Цветная схема расположения участков")
 						.genplan__mask 
 							svg(width='970' height='922' viewBox='0 0 970 922' fill='none' xmlns='http://www.w3.org/2000/svg')
